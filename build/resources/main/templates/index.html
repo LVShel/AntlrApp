@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+<h1>Antlr Expression evaluator</h1>
+<form action="/evaluate" id="eval_form" method="get" name="eval_form" role="form">
+    <br>
+    <div>
+        <label for="expressionInput"> Enter expression </label>
+        <textarea rows="1" cols="40" id="expressionInput" name="expressionInput" th:text="${expressionInput}"></textarea>
+    </div>
+    <br>
+    <div>
+        <input class="form-control" id="submit" type="submit" value="Evaluate"/>
+    </div>
+    <br>
+    <div>
+        <label for="resultOutput"> Result: </label>
+        <output id="resultOutput" th:text="${result}"></output>
+    </div>
+    <br>
+    <div th:if="${error} != null">
+        <output class="form-control" id="errOutput" th:text="${error}"></output>
+    </div>
+</form>
+</body>
+
+</html>
